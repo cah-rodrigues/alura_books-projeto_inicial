@@ -3,9 +3,11 @@ const elementBooksInset = document.getElementById('livros')
 function displayBooksOnScreen(booksList){
     elementBooksInset.innerHTML = ''
     booksList.forEach(book => {
+        //let availability = checkBookAvailability(book)
+        let availability = book.quantidade > 0 ? 'livro__imagens' : 'livro__imagens indisponivel' //operador ternario let + if/else
         elementBooksInset.innerHTML += `
         <div class="livro"> 
-            <img class="livro__imagens" src="${book.imagem}" alt="${book.alt}" />
+            <img class="${availability}" src="${book.imagem}" alt="${book.alt}" />
             <h2 class="livro__titulo">
                 ${book.titulo}
                 </h2>
@@ -16,5 +18,13 @@ function displayBooksOnScreen(booksList){
             </div>
         </div>
         `
-    });
+    })
 }
+
+// function checkBookAvailability(book) {
+//     if (book.quantidade > 0){
+//         return 'livro__imagens'
+//     } else{
+//         return 'livro__imagens indisponivel'
+//     }
+// }
