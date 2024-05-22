@@ -1,6 +1,7 @@
 const elementBooksInset = document.getElementById('livros')
 
-function booksDisplayScreen(booksList){
+function displayBooksOnScreen(booksList){
+    elementBooksInset.innerHTML = ''
     booksList.forEach(book => {
         elementBooksInset.innerHTML += `
         <div class="livro"> 
