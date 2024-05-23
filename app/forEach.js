@@ -1,7 +1,9 @@
 const elementBooksInset = document.getElementById('livros')
+const elementAllBooksAvailable = document.getElementById('valor_total_livros_disponiveis')
 
 function displayBooksOnScreen(booksList){
-    elementBooksInset.innerHTML = ''
+    elementAllBooksAvailable.innerHTML = '';
+    elementBooksInset.innerHTML = '';
     booksList.forEach(book => {
         //let availability = checkBookAvailability(book)
         let availability = book.quantidade > 0 ? 'livro__imagens' : 'livro__imagens indisponivel' //operador ternario let + if/else
